@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {PaperProvider} from "react-native-paper";
+import DrawerTest from "./components/DrawerTest";
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <PaperProvider>
+            <SafeAreaView style={styles.container}>
+                <DrawerTest />
+            </SafeAreaView>
+        </PaperProvider>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1
+    },
+    cardContainer: {
+        flex: 1,
+        marginBottom: 30
+    },
+    card: {
+        marginRight: 20,
+        width: 250
+    }
 });
